@@ -2,6 +2,7 @@ package com.example.wildberriesweektwo2
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import com.example.wildberriesweektwo2.databinding.ActivityMainBinding
 
@@ -34,6 +35,8 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        Log.d("Live circle", "onCreate Activity 1")
+
         if (savedInstanceState == null) {
             openFragment(FirstFragment.newInstance(), R.id.fragment)
         }
@@ -46,4 +49,35 @@ class MainActivity : AppCompatActivity() {
             .replace(idHolder, fragment)
             .commit()
     }
+
+    override fun onStart() {
+        super.onStart()
+        Log.d("Live circle", "onStart Activity 1")
+    }
+
+    override fun onResume() {
+        super.onResume()
+        Log.d("Live circle", "onResume Activity 1")
+    }
+
+    override fun onPause() {
+        super.onPause()
+        Log.d("Live circle", "onPause Activity 1")
+    }
+
+    override fun onStop() {
+        super.onStop()
+        Log.d("Live circle", "onStop Activity 1")
+    }
+
+    override fun onRestart() {
+        super.onRestart()
+        Log.d("Live circle", "onRestart Activity 1")
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        Log.d("Live circle", "onDestroy Activity 1")
+    }
+
 }
